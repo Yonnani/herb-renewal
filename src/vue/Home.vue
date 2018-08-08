@@ -33,7 +33,7 @@
         <div>
             <div class="d-flex justify-content-between m-3">
                 <h5>포트폴리오</h5>
-                <a href="#">더보기</a>
+                <a href="#/portfolio">더보기</a>
             </div>
             <div class="d-flex justify-content-between m-3" style="height: 150px">
                 <img src="https://picsum.photos/1024/480/?image=52" style="width: 25%"/>
