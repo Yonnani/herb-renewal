@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <footer>
         <b-row>
             <b-col>
                 <img src="./../assets/logo.png" />
@@ -21,7 +21,7 @@
                 </p>
             </b-col>
         </b-row>
-    </div>
+    </footer>
 </template>
 
 <script>
