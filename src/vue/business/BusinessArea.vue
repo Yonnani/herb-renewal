@@ -35,7 +35,7 @@
                 <b-col>
                     <h5>디자인</h5>
                     <div class="circle-image">
-                        <img src="../../assets/images/si-glyph-brush-and-pencil.svg" alt="">
+                        <img src="../../assets/img/icons/si-glyph-brush-and-pencil.svg" alt="">
                     </div>
                     <ul>
                         <li>기본 및 실시설계</li>
@@ -44,7 +44,7 @@
                 <b-col>
                     <h5>시공</h5>
                     <div class="circle-image">
-                        <img src="../../assets/images/si-glyph-shovel.svg" alt="">
+                        <img src="../../assets/img/icons/si-glyph-shovel.svg" alt="">
                     </div>
                     <ul>
                         <li>석가산, 산벽 공사</li>
@@ -53,7 +53,7 @@
                 <b-col>
                     <h5>유지관리</h5>
                     <div class="circle-image">
-                        <img src="../../assets/images/si-glyph-can-water.svg" alt="">
+                        <img src="../../assets/img/icons/fountain.svg" alt="">
                     </div>
                     <ul>
                         <li>식물 및 수경시설 관리</li>
@@ -62,7 +62,7 @@
                 <b-col>
                     <h5>제품판매</h5>
                     <div class="circle-image">
-                        <img src="../../assets/images/si-glyph-shovel.svg" alt="">
+                        <img src="../../assets/img/icons/rock.svg" alt="">
                     </div>
                     <ul>
                         <li>기암괴석 판매</li>
@@ -70,9 +70,6 @@
                 </b-col>
             </b-row>
         </div>
-
-
-
     </div>
 </template>
 
