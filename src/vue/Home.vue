@@ -4,32 +4,17 @@
                     style="text-shadow: 1px 1px 2px #333;"
                     controls
                     indicators
-                    background="#ababab"
                     :interval="3000"
-                    img-width="1024"
-                    img-height="480"
                     v-model="slide"
                     @sliding-start="onSlideStart"
                     @sliding-end="onSlideEnd">
+            <!--img-width="1024"-->
+            <!--img-height="480"-->
 
-            <b-carousel-slide>
-                <img slot="img" class="d-block img-fluid w-100"
-                     src="./../assets/img/main_01.jpg" alt="image slot">
-            </b-carousel-slide>
-
-            <b-carousel-slide>
-                <img slot="img" class="d-block img-fluid w-100"
-                     src="./../assets/img/main_02.jpg" alt="image slot">
-            </b-carousel-slide>
-
-            <b-carousel-slide>
-                <img slot="img" class="d-block img-fluid w-100"
-                     src="./../assets/img/main_03.jpg" alt="image slot">
-            </b-carousel-slide>
-
-            <b-carousel-slide>
-                <img slot="img" class="d-block img-fluid w-100"
-                     src="./../assets/img/main_04.jpg" alt="image slot">
+            <b-carousel-slide v-for="image in images" :key="image.index">
+                <img slot="img" class="d-block w-100 custom-fixed-image"
+                     style=""
+                     :src="getImgUrl(image.index)" alt="image slot">
             </b-carousel-slide>
 
         </b-carousel>
@@ -39,23 +24,45 @@
                 <h5>포트폴리오</h5>
                 <a href="#/portfolio">더보기</a>
             </div>
-            <div class="d-flex justify-content-between m-3" style="height: 150px">
-                <img src="./../assets/img/main_01.jpg" style="width: 25%"/>
-                <img src="./../assets/img/main_02.jpg" style="width: 25%"/>
-                <img src="./../assets/img/main_03.jpg" style="width: 25%"/>
-                <img src="./../assets/img/main_04.jpg" style="width: 25%"/>
-            </div>
+            <b-row class="d-flex justify-content-between m-3" style="height: 150px">
+                <b-col v-for="image in images" :key="image.index">
+                    <img :src="getImgUrl(image.index)" class=""
+                         style="width: 100%; cursor: pointer;"
+                         @click="selectPic(image.index)"/><!-- -->
+                </b-col>
+            </b-row>
         </div>
     </div>
 </template>
 
 <script>
+    /* eslint-disable */
     export default {
         name: 'Home',
+        mounted() {
+        },
         data () {
             return {
                 slide: 0,
-                sliding: null
+                sliding: null,
+                images: [
+                    {
+                        index: 1,
+                        src: '/img/main_01.jpg'
+                    },
+                    {
+                        index: 2,
+                        src: '/img/main_02.jpg'
+                    },
+                    {
+                        index: 3,
+                        src: '/img/main_03.jpg'
+                    },
+                    {
+                        index: 4,
+                        src: '/img/main_04.jpg'
+                    }
+                ]
             }
         },
         methods: {
@@ -64,7 +71,22 @@
             },
             onSlideEnd () {
                 this.sliding = false
+            },
+            getImgUrl(index) {
+                return require(`./../assets/img/main_0${index}.jpg`);
+            },
+            selectPic(index) {
+                this.slide = index - 1;
             }
         }
     }
 </script>
+
+<style scoped>
+    .custom-fixed-image {
+        width: auto;
+        height: auto;
+        max-width: 1024px;
+        max-height: 480px;
+    }
+</style>
