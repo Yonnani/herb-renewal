@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <header>
         <!--<div class="d-flex justify-content-between">-->
         <b-row>
             <b-col cols="12" sm="4">
@@ -24,7 +24,7 @@
             </b-col>
         </b-row>
         <!--</div>-->
-    </div>
+    </header>
 </template>
 
 <script>
