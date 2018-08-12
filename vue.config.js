@@ -1,5 +1,5 @@
 module.exports = {
-    corsUseCredentials: true,
+    // corsUseCredentials: true,
     devServer: {
         port:9000
     }
