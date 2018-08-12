@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './assets/styles/common.scss'
 
 import routes from './router'
 
@@ -19,4 +20,4 @@ const router = new VueRouter({ routes })
 new Vue({
   render: h => h(App),
   router
-}).$mount('#app')
+}).$mount('#app');
