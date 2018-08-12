@@ -14,7 +14,7 @@
         name: 'Directions',
         mounted() {
             /* eslint-disable */
-            console.log('mounted start');
+            console.log('map start');
             var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
             var options = { //지도를 생성할 때 필요한 기본 옵션
                 center: new daum.maps.LatLng(35.271153, 129.092369), //지도의 중심좌표.
@@ -23,11 +23,24 @@
 
             var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-            // 줌 컨트롤 추가
-            var control = new daum.maps.ZoomControl();
-            map.addControl(control, daum.maps.ControlPosition.TOPRIGHT);
+            // 마커가 표시될 위치입니다
+            var markerPosition  = new daum.maps.LatLng(35.271153, 129.092369);
 
-            console.log('mounted end');
+            // 마커를 생성합니다
+            var marker = new daum.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+
+            // 줌 컨트롤 추가
+            // var control = new daum.maps.ZoomControl();
+            // map.addControl(control, daum.maps.ControlPosition.TOPRIGHT);
+
+            // map.relayout();
+
+            console.log('map end');
         }
     }
 </script>
