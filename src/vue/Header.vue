@@ -11,11 +11,11 @@
                 <div class="d-flex flex-column">
                     <b-nav class="d-flex justify-content-end">
                         <b-nav-item to="/">홈으로</b-nav-item>
-                        <b-nav-item>견적문의</b-nav-item>
-                        <b-nav-item>오시는길</b-nav-item>
+                        <b-nav-item to="/customer/estimate">견적문의</b-nav-item>
+                        <b-nav-item to="/company/directions">오시는길</b-nav-item>
                     </b-nav>
                     <b-nav class="d-flex justify-content-end">
-                        <b-nav-item to="/company">회사소개</b-nav-item>
+                        <b-nav-item to="/company/greeting">회사소개</b-nav-item>
                         <b-nav-item to="/business">사업분야</b-nav-item>
                         <b-nav-item to="/portfolio">포트폴리오</b-nav-item>
                         <b-nav-item to="/customer">고객센터</b-nav-item>

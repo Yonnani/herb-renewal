@@ -16,8 +16,7 @@
             'doLoad'
         ],
         mounted() {
-            // eslint-disable-next-line
-            console.log(this.doLoad);
+            this.getMap();
         },
         methods: {
             getMap() {
@@ -48,14 +47,15 @@
 
                 console.log('map end');
             }
-        },
-        watch: {
-            doLoad(value) {
-                if (value) {
-                    this.getMap();
-                    console.log('do load watch value ', value);
-                }
-            }
         }
+        // watch: {
+        //     doLoad(value) {
+        //         console.log('============== ', value);
+        //         if (value) {
+        //             this.getMap();
+        //             console.log('do load watch value ', value);
+        //         }
+        //     }
+        // }
     }
 </script>

@@ -3,6 +3,10 @@ import Company from '@/vue/Company'
 import Business from '@/vue/Business'
 import Portfolio from '@/vue/Portfolio'
 import Customer from '@/vue/Customer'
+import Greeting from '@/vue/company/Greeting'
+import Directions from '@/vue/company/Directions'
+import EstimateRequest from '@/vue/customer/EstimateRequest'
+import NoticeBoard from '@/vue/customer/NoticeBoard'
 
 const routes = [
     {
@@ -15,7 +19,20 @@ const routes = [
     },
     {
         path: '/company',
-        component: Company
+        redirect: '/company/greeting',
+        component: Company,
+        children: [
+            {
+                path: 'greeting',
+                component: Greeting,
+                name: 'companyGreeting'
+            },
+            {
+                path: 'directions',
+                component: Directions,
+                name: 'companyDirections'
+            }
+        ]
     },
     {
         path: '/business',
@@ -27,7 +44,20 @@ const routes = [
     },
     {
         path: '/customer',
-        component: Customer
+        redirect: '/customer/notice',
+        component: Customer,
+        children: [
+            {
+                path: 'estimate',
+                component: EstimateRequest,
+                name: 'customerEstimate'
+            },
+            {
+                path: 'notice',
+                component: NoticeBoard,
+                name: 'customerNotice'
+            }
+        ]
     }
 ];
 

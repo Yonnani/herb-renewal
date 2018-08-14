@@ -1,22 +1,18 @@
 <template>
     <div>
         <h3>고객센터 CUSTOMER</h3>
-        <b-tabs>
-            <b-tab title="공지사항" active>
-                <NoticeBoard></NoticeBoard>
-            </b-tab>
-            <b-tab title="견적문의">
-                <EstimateRequest></EstimateRequest>
-            </b-tab>
-        </b-tabs>
+        <b-nav tabs>
+            <b-nav-item to="/customer/notice"
+                        >공지사항</b-nav-item><!-- :class="routeName === 'companyGreeting' ? 'active' : ''" -->
+            <b-nav-item to="/customer/estimate"
+                        >견적문의</b-nav-item><!-- :class="routeName === 'companyDirections' ? 'active' : ''" -->
+        </b-nav>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import NoticeBoard from "./customer/NoticeBoard";
-    import EstimateRequest from "./customer/EstimateRequest";
     export default {
-        name: 'Customer',
-        components: {EstimateRequest, NoticeBoard}
+        name: 'Customer'
     }
 </script>

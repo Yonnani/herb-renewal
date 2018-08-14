@@ -1,36 +1,16 @@
 <template>
     <div>
         <h3>회사 소개 About Company</h3>
-        <b-tabs>
-            <b-tab title="인사말" :active="isGreetingPage" @click="selectGreeting">
-                <Greeting></Greeting>
-            </b-tab>
-            <b-tab title="오시는 길" :active="!isGreetingPage" @click="selectDirections">
-                <Directions :doLoad="!isGreetingPage"></Directions>
-            </b-tab>
-        </b-tabs>
+        <b-nav tabs>
+            <b-nav-item to="/company/greeting">인사말</b-nav-item>
+            <b-nav-item to="/company/directions">오시는 길</b-nav-item>
+        </b-nav>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import Greeting from "./company/Greeting";
-    import Directions from "./company/Directions";
-
     export default {
-        name: 'Company',
-        components: {Directions, Greeting},
-        data() {
-            return {
-                isGreetingPage: true
-            }
-        },
-        methods: {
-            selectGreeting() {
-                this.isGreetingPage = true;
-            },
-            selectDirections() {
-                this.isGreetingPage = false;
-            }
-        }
+        name: 'Company'
     }
 </script>
