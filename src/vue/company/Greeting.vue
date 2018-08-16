@@ -15,7 +15,7 @@
                 </p>
             </b-col>
             <b-col cols="4">
-                <img src="https://picsum.photos/1024/480/?image=52" />
+                <img src="./../../assets/img/20180725_152906-1.jpg" />
             </b-col>
         </b-row>
         <b-row class="px-3">
