@@ -13,7 +13,6 @@
 
             <b-carousel-slide v-for="image in images" :key="image.index">
                 <img slot="img" class="d-block w-100 custom-fixed-image"
-                     style=""
                      :src="getImgUrl(image.index)" alt="image slot">
             </b-carousel-slide>
 
