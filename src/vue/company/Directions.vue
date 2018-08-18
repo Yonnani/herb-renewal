@@ -1,6 +1,6 @@
 <template>
     <div class="p-3">
-        <div id="map" class="mb-3" style="width:500px;height:400px;"></div>
+        <div id="map" class="mb-3 w-100" style="height:400px;"></div>
         <div>
             <dt>ADDRESS</dt><dd>부산광역시 금정구 중앙대로 2093, 803호</dd>
             <dt>TEL</dt><dd>051-902-1755</dd>

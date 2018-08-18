@@ -6,6 +6,8 @@
                     indicators
                     :interval="3000"
                     v-model="slide"
+                    img-width="1200"
+                    img-height="800"
                     @sliding-start="onSlideStart"
                     @sliding-end="onSlideEnd">
             <!--img-width="1024"-->
@@ -19,12 +21,12 @@
         </b-carousel>
 
         <div>
-            <div class="d-flex justify-content-between m-3">
-                <h5>포트폴리오</h5>
+            <div class="d-flex justify-content-between mt-4">
+                <h5 class="mb-0">포트폴리오</h5>
                 <a href="#/portfolio">더보기</a>
             </div>
-            <b-row class="d-flex justify-content-between m-3" style="height: 150px">
-                <b-col v-for="image in images" :key="image.index">
+            <b-row class="d-flex justify-content-between my-3"><!-- style="height: 150px" -->
+                <b-col v-for="image in images" :key="image.index" cols="6" md="3" class="mb-1">
                     <img :src="getImgUrl(image.index)" class=""
                          style="width: 100%; cursor: pointer;"
                          @click="selectPic(image.index)"/><!-- -->
@@ -85,7 +87,7 @@
     .custom-fixed-image {
         width: auto;
         height: auto;
-        max-width: 1024px;
-        max-height: 480px;
+        max-width: 1200px;
+        max-height: 800px;
     }
 </style>
