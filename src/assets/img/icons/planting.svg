@@ -1,0 +1,23 @@
+
+<svg width="150px" height="148px" viewBox="0 0 150 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="45.1997924 70.2797203 71.2765957 70.2797203 71.2765957 0 0 0 0 70.2797203 24.3383498 70.2797203 24.3383498 44.5676275 45.1997924 44.5676275"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5">
+            <ellipse id="Oval-Copy-5" fill="#9CCB3A" cx="75" cy="73.951049" rx="75" ry="73.951049"></ellipse>
+            <g id="tree" transform="translate(38.297872, 30.419580)">
+                <rect id="Rectangle-107" stroke="#FFFFFF" stroke-width="3.5" x="34.7287234" y="24.8269231" width="1" height="60.486014" rx="0.5"></rect>
+                <path d="M33.5079023,50.3912045 L18.2894786,35.7956053 L33.5079023,50.3912045 Z M34.7761043,36.860389 C40.9559573,31.5981821 46.7148894,26.2237762 46.7148894,26.2237762 L34.7761043,36.860389 Z M35.6410339,58.5739099 L51.3155128,45.7588122 L35.6410339,58.5739099 Z" id="Line-Copy-4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <path d="M35.2162204,67.4807692 C53.5854691,67.4807692 68.462766,52.8958312 68.462766,34.9219527 C68.462766,14.7037082 59.3498149,1.75 42.6461511,1.75 C22.3849698,1.75 2.81382979,15.7341482 2.81382979,32.2806652 C2.81382979,50.9888857 17.5124544,67.4807692 35.2162204,67.4807692 Z" id="leaves" stroke="#FFFFFF" stroke-width="3.5" mask="url(#mask-2)"></path>
+            </g>
+            <path d="M55.5374313,139.994568 L55.5374313,139.994568 C80.3663762,139.994568 100.494213,120.148239 100.494213,95.6665522" id="detail" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" transform="translate(78.015822, 117.830560) rotate(-141.000000) translate(-78.015822, -117.830560) "></path>
+        </g>
+    </g>
+</svg>
