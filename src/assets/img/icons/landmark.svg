@@ -7,7 +7,7 @@
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group">
-            <circle id="Oval" fill="#60A390" cx="75" cy="75" r="75"></circle>
+            <circle id="Oval" fill="#9CCB3A" cx="75" cy="75" r="75"></circle>
             <ellipse id="base" stroke="#FFFFFF" stroke-width="2.5" cx="74.2553191" cy="50.0759878" rx="11.5159574" ry="11.6679331"></ellipse>
             <g id="map" transform="translate(38.000000, 25.531915)">
                 <g transform="translate(0.297872, 34.042553)" stroke="#FFFFFF">
@@ -18,7 +18,7 @@
                 <mask id="mask-2" fill="white">
                     <use xlink:href="#path-1"></use>
                 </mask>
-                <use id="Mask" fill="#60A390" transform="translate(37.531915, 36.170213) rotate(-180.000000) translate(-37.531915, -36.170213) " xlink:href="#path-1"></use>
+                <use id="Mask" fill="#9CCB3A" transform="translate(37.531915, 36.170213) rotate(-180.000000) translate(-37.531915, -36.170213) " xlink:href="#path-1"></use>
             </g>
             <path d="M75.5319149,27.3270176 C75.3430738,27.5092266 75.1219206,27.7396483 74.8738015,28.01414 C74.0491073,28.926491 72.9782219,30.2665252 71.7586075,31.916106 C69.1187967,35.4865633 66.0348306,40.1549633 63.175156,44.963984 C56.0417071,56.9600703 51.5,67.6498399 51.5,73.7588652 C51.5,87.0079533 61.7714541,96.3723404 75.5319149,96.3723404 C89.2923757,96.3723404 99.5638298,87.0079533 99.5638298,73.7588652 C99.5638298,67.6498399 95.0221227,56.9600703 87.8886738,44.963984 C85.0289992,40.1549633 81.9450331,35.4865633 79.3052223,31.916106 C78.0856079,30.2665252 77.0147225,28.926491 76.1900283,28.01414 C75.9419092,27.7396483 75.720756,27.5092266 75.5319149,27.3270176 Z" id="base-copy" stroke="#FFFFFF" stroke-width="3" transform="translate(75.531915, 61.702128) rotate(-180.000000) translate(-75.531915, -61.702128) "></path>
             <circle id="base" stroke="#FFFFFF" stroke-width="2.5" cx="75.5319149" cy="48.9361702" r="12.5797872"></circle>
