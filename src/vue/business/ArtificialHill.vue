@@ -6,7 +6,7 @@
             </b-row>
             <b-row class="p-3">
                 <b-col cols="12" md="4">
-                    <img src="../../assets/img/business/artificial-hill-01.jpg" alt="산벽1">
+                    <img class="w-100" src="../../assets/img/business/artificial-hill-01.jpg" alt="산벽1">
                 </b-col>
                 <b-col cols="12" md="4">
                     <img src="../../assets/img/business/artificial-hill-02.jpg" alt="산벽2">

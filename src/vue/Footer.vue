@@ -1,5 +1,5 @@
 <template>
-    <footer class="pt-3">
+    <footer class="pt-3 footer">
         <b-row>
             <b-col cols="12" md="3" class="px-5 px-md-0 mb-2">
                 <img src="./../assets/logo.png" class="w-100" style="max-width: 270px;" />
