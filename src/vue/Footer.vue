@@ -9,7 +9,7 @@
                     <div class="mx-2">
                         <a href="#/company/greeting">인사말</a> /
                         <a href="#/company/directions">오시는길</a> /
-                        <a href="#/customer/estimate">견적기타문의</a> /
+                        <a href="#/customer/estimate" style="display: none;">견적기타문의</a><!-- / -->
                         이메일주소무단수집금지
                     </div>
                 </div>
