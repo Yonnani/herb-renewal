@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="header">
         <!--<div class="d-flex justify-content-between">-->
         <b-row>
             <b-col cols="12" sm="4">
