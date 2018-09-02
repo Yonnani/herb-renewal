@@ -14,5 +14,18 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9a29ff2f6e4604e63a7aefc73e9fc5f7"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script>
+        const config = {
+            apiKey: "AIzaSyBMNx91fPiaXNR3tRXWez5zyIrTbw-8BCE",
+            authDomain: "herbdongsan-noticeboard.firebaseapp.com",
+            databaseURL: "https://herbdongsan-noticeboard.firebaseio.com",
+            projectId: "herbdongsan-noticeboard",
+            storageBucket: "",
+            messagingSenderId: "920708035047"
+        };
+        firebase.initializeApp(config);
+        const database = firebase.database();
+    </script>
   </body>
 </html>

@@ -7,6 +7,9 @@ import Greeting from '@/vue/company/Greeting'
 import Directions from '@/vue/company/Directions'
 import EstimateRequest from '@/vue/customer/EstimateRequest'
 import NoticeBoard from '@/vue/customer/NoticeBoard'
+import Admin from '@/vue/Admin'
+import AdminLogin from '@/vue/admin/Login'
+import WriteNotice from '@/vue/admin/WriteNotice'
 
 const routes = [
     {
@@ -56,6 +59,23 @@ const routes = [
                 path: 'notice',
                 component: NoticeBoard,
                 name: 'customerNotice'
+            }
+        ]
+    },
+    {
+        path: '/admin',
+        component: Admin,
+        redirect: '/admin/login',
+        children: [
+            {
+                path: 'login',
+                component: AdminLogin,
+                name: 'adminLogin'
+            },
+            {
+                path: 'write',
+                component: WriteNotice,
+                name: 'writeNotice'
             }
         ]
     }

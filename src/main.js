@@ -9,13 +9,18 @@ import './assets/styles/common.scss'
 
 import routes from './router'
 
+// import database from './firebase/index'
+
+/* eslint-disable */
 Vue.config.productionTip = false
 
 Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 
+// Vue.prototype.$database = database;
+// Vue.prototype.$firebase = firebase;
 
-const router = new VueRouter({ routes })
+const router = new VueRouter({ routes });
 
 new Vue({
   render: h => h(App),

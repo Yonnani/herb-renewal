@@ -14,7 +14,8 @@
     "vee-validate": "^2.1.0-beta.8",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vue-spinner": "^1.0.3"
+    "vue-spinner": "^1.0.3",
+    "vue2-editor": "^2.6.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.10",
