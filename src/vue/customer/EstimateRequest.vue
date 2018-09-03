@@ -143,7 +143,7 @@
     import VeeValidate from 'vee-validate';
     import ClipLoader from 'vue-spinner/src/ClipLoader'
 
-    Vue.use(VeeValidate);
+    Vue.use(VeeValidate, { fieldsBagName: 'veeFields' });
 
     /* eslint-disable */
     export default {
