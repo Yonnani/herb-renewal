@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-row v-if="!userUid">
+        <b-row v-if="!adminUid">
             <b-col cols="12" md="6">
                 <b-form-group label="관리자 이메일"
                               label-for="email">
@@ -15,7 +15,7 @@
         </b-row>
         <b-row v-else>
             <b-col>
-                <WriteNotice :uid="userUid"></WriteNotice>
+                <WriteNotice></WriteNotice>
             </b-col>
         </b-row>
 
@@ -53,11 +53,17 @@
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                     .then(result => {
                         this.userUid = result.user.uid;
+                        this.$store.commit('setAdminUid', this.userUid);
                     })
                     .catch(error => {
                         this.errorModal = true;
                         this.errorMessage = error.message;
                     });
+            }
+        },
+        computed: {
+            adminUid() {
+                return this.$store.state.adminUid;
             }
         }
     }

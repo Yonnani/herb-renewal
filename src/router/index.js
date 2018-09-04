@@ -10,6 +10,7 @@ import NoticeBoard from '@/vue/customer/NoticeBoard'
 import Admin from '@/vue/Admin'
 import AdminLogin from '@/vue/admin/Login'
 import WriteNotice from '@/vue/admin/WriteNotice'
+import NoticeDetail from '@/vue/customer/NoticeDetail'
 
 const routes = [
     {
@@ -59,6 +60,11 @@ const routes = [
                 path: 'notice',
                 component: NoticeBoard,
                 name: 'customerNotice'
+            },
+            {
+                path: 'noticedetail',
+                component: NoticeDetail,
+                name: 'NoticeDetail'
             }
         ]
     },

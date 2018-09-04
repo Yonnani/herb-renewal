@@ -40,9 +40,6 @@
         name: "WriteNotice",
         created() {
         },
-        props: [
-            'uid'
-        ],
         components: {
           VueEditor
         },
@@ -70,6 +67,11 @@
                         this.$router.push('/customer/notice');
                     }
                 });
+            }
+        },
+        computed: {
+            uid() {
+                return this.$store.state.adminUid;
             }
         }
     }
