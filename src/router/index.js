@@ -58,13 +58,23 @@ const routes = [
             },
             {
                 path: 'notice',
-                component: NoticeBoard,
-                name: 'customerNotice'
-            },
-            {
-                path: 'noticedetail',
-                component: NoticeDetail,
-                name: 'NoticeDetail'
+                redirect: 'notice/list',
+                component: {
+                    render (c) { return c('router-view') }
+                },
+                name: 'customerNotice',
+                children: [
+                    {
+                        path: 'list',
+                        component: NoticeBoard,
+                        name: 'NoticeBoard'
+                    },
+                    {
+                        path: 'detail',
+                        component: NoticeDetail,
+                        name: 'NoticeDetail'
+                    }
+                ]
             }
         ]
     },

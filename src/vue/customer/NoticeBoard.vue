@@ -2,7 +2,11 @@
     <div>
         <b-row class="p-3">
             <b-col class="pt-4">
-                <b-table hover
+                <div v-if="loading">
+                    <ClipLoader :loading="loading" :color="'#212529'"></ClipLoader>
+                </div>
+                <b-table v-else
+                         hover
                          :items="items"
                          :fields="fields"
                          :current-page="currentPage"
@@ -29,11 +33,16 @@
 </template>
 
 <script>
+    import ClipLoader from 'vue-spinner/src/ClipLoader'
     /* eslint-disable */
     export default {
         name: 'NoticeBoard',
+        components: {
+            ClipLoader
+        },
         data() {
             return {
+                loading: true,
                 items: [],
                 fields: [
                     {
@@ -58,6 +67,7 @@
             noticeRef.once('value').then(snapshot => {
                 const dataObj = snapshot.val();
                 if (!!dataObj) {
+                    this.loading = false;
                     var keyArr = Object.keys(dataObj);
                     this.items = keyArr.map(key => {
                         return {...dataObj[key],
@@ -76,7 +86,7 @@
         methods: {
             showDetail(data) {
                 this.$store.commit('setNoticeDetail', data);
-                this.$router.push('/customer/noticedetail');
+                this.$router.push('/customer/notice/detail');
             }
         }
     }

@@ -18,7 +18,7 @@
                         <b-nav-item to="/company/greeting">회사소개</b-nav-item>
                         <b-nav-item to="/business">사업분야</b-nav-item>
                         <b-nav-item to="/portfolio">포트폴리오</b-nav-item>
-                        <b-nav-item to="/customer/estimate">고객센터</b-nav-item>
+                        <b-nav-item to="/customer/notice">고객센터</b-nav-item>
                     </b-nav>
                 </div>
             </b-col>

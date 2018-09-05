@@ -1,17 +1,25 @@
 <template>
     <div>
-        <b-row class="p-3">
+        <b-row class="p-3" style="display:block;">
             <b-col class="pt-4">
-                <p class="font-weight-bold">{{ detail.subject }}</p>
-                <p class="font-weight-light">{{ detail.refinedCreateTime }}</p>
+                <div>
+                    <p class="font-weight-bold" style="font-size:22px; margin-bottom: 30px">{{ detail.subject }}
+                        <span class="font-weight-light" style="margin-left:10px; font-size:16px;">{{ detail.refinedCreateTime }}</span>
+                    </p>
+                </div>
+                <div id="quill-content" class="ql-editor">
+                    <p v-html="detail.content"></p>
+                    <!--<vue-editor v-model="detail.content" disabled></vue-editor>-->
+                </div>
                 <hr>
-                <p v-html="detail.content"></p>
-                <b-button class="float-right" variant="info" to="/customer/notice" style="color: #FFF;">목록</b-button>
-                <b-button v-if="!!adminUid"
-                          class="float-right mr-2"
-                          variant="info"
-                          @click="deleteNotice(detail.key)"
-                          style="color: #FFF;">삭제</b-button>
+                <div style="background-color: #eeeeee;">
+                    <b-button class="float-right" variant="info" to="/customer/notice" style="color: #FFF;">목록</b-button>
+                    <b-button v-if="!!adminUid"
+                              class="float-right mr-2"
+                              variant="info"
+                              @click="deleteNotice(detail.key)"
+                              style="color: #FFF;">삭제</b-button>
+                </div>
 
                 <b-modal v-model="errorModal"
                          header-bg-variant="danger"
@@ -31,6 +39,8 @@
 
 <script>
     /* eslint-disable */
+    import { VueEditor, Quill } from "vue2-editor";
+
     export default {
         name: 'NoticeDetail',
         data() {
@@ -39,10 +49,14 @@
                 errorModal: false
             }
         },
-        created() {
-            console.log('notice detail');
+        components: {
+            VueEditor
         },
         mounted() {
+            // var quill = new Quill(document.getElementById('quill-content'), {
+            //     theme: 'bubble',
+            //     readOnly: true
+            // });
         },
         computed: {
             detail() {
@@ -67,3 +81,8 @@
         }
     }
 </script>
+
+<style scoped>
+    /*@import "~quill/dist/quill.core.css";*/
+    /*@import "~quill/dist/quill.bubble.css";*/
+</style>

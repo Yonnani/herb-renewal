@@ -109,9 +109,6 @@
             </b-col>
         </b-row>
 
-        <!--<b-button variant="outline-primary" @click="successModal = !successModal">성공</b-button>-->
-        <!--<b-button variant="outline-primary" @click="errorModal = !errorModal">에러</b-button>-->
-
         <b-modal v-model="successModal"
                  header-bg-variant="success"
                  header-text-variant="light">

@@ -15,8 +15,22 @@
                 </template>
                 <vue-editor v-model="content"></vue-editor>
             </b-form-group>
-            <b-button class="float-right" variant="info" @click="submit">작성</b-button>
+            <b-button class="float-right" variant="info" @click="confirm">작성</b-button>
         </b-form>
+
+        <b-modal v-model="confirmModal" no-close-on-esc no-close-on-backdrop>
+            <div slot="modal-header">
+                공지사항 작성
+            </div>
+            <p class="my-4">공지사항을 등록하시겠습니까?</p>
+            <div slot="modal-footer" class="mt-0 px-2">
+                <b-btn variant="info" class="float-right mx-1" @click="submit" :disabled="registering">
+                    <span v-if="!registering">등록</span>
+                    <ClipLoader v-else :loading="registering" :color="'white'" :size="'18px'"></ClipLoader>
+                </b-btn>
+                <b-btn variant="default" class="float-right mx-1" @click="confirmModal=false" :disabled="registering">취소</b-btn>
+            </div>
+        </b-modal>
 
         <b-modal v-model="errorModal"
                  header-bg-variant="danger"
@@ -35,31 +49,45 @@
 <script>
     /* eslint-disable */
     import { VueEditor } from "vue2-editor";
+    import ClipLoader from 'vue-spinner/src/ClipLoader'
 
     export default {
         name: "WriteNotice",
         created() {
         },
         components: {
-          VueEditor
+          VueEditor,
+          ClipLoader
         },
         data() {
             return {
                 subject: '',
                 content: '',
                 errorModal: false,
-                errorMessage: ''
+                errorMessage: '',
+                confirmModal: false,
+                registering: false
             }
         },
         methods: {
+            confirm() {
+                if (!this.subject || !this.content) {
+                    this.errorModal = true;
+                    this.errorMessage = '제목과 내용을 입력해 주세요.';
+                } else {
+                    this.confirmModal = true;
+                }
+            },
             submit() {
-                console.log('submit');
+                this.registering = true;
                 const noticeRef = database.ref(`notice/${this.uid}`);
                 noticeRef.push({
                     content: this.content,
                     subject: this.subject,
                     createTime: new Date().getTime()
                 }, (err) => {
+                    this.confirmModal = false;
+                    this.registering = false;
                     if (!!err) {
                         this.errorMessage = err;
                         this.errorModal = true;
