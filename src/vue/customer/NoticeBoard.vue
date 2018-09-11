@@ -5,20 +5,28 @@
                 <div v-if="loading">
                     <ClipLoader :loading="loading" :color="'#212529'"></ClipLoader>
                 </div>
-                <b-table v-else
-                         hover
-                         :items="items"
-                         :fields="fields"
-                         :current-page="currentPage"
-                         :per-page="perPage">
-                    <template slot="subject" slot-scope="data">
-                        <a href="#" @click.prevent="showDetail(data.item)">{{ data.item.subject }}</a>
-                    </template>
-                    <template slot="createTime" slot-scope="data">
-                        <!--{{ moment(data.item.createTime).format('YYYY.MM.DD') }}-->
-                        {{ data.item.refinedCreateTime }}
-                    </template>
-                </b-table>
+                <div v-else>
+                    <b-table v-if="items.length > 0"
+                             hover
+                             :items="items"
+                             :fields="fields"
+                             :current-page="currentPage"
+                             :per-page="perPage">
+                        <template slot="subject" slot-scope="data">
+                            <a href="#" @click.prevent="showDetail(data.item)">{{ data.item.subject }}</a>
+                        </template>
+                        <template slot="createTime" slot-scope="data">
+                            <!--{{ moment(data.item.createTime).format('YYYY.MM.DD') }}-->
+                            {{ data.item.refinedCreateTime }}
+                        </template>
+                    </b-table>
+                    <b-table v-else
+                             :items="noitemlist" :fields="noitemFields">
+                        <template>
+
+                        </template>
+                    </b-table>
+                </div>
             </b-col>
         </b-row>
         <b-row class="p-3">
@@ -54,7 +62,13 @@
                         label: '날짜'
                     }
                 ],
-                perPage: 3,
+                noitemlist: [{
+                        content: '공지사항이 없습니다.'
+                }],
+                noitemFields: [{
+                        key: 'content', label: '제목'
+                }],
+                perPage: 10,
                 currentPage: 0,
                 moment: null
             }
@@ -66,8 +80,8 @@
             const noticeRef = database.ref(refAddr);
             noticeRef.once('value').then(snapshot => {
                 const dataObj = snapshot.val();
+                this.loading = false;
                 if (!!dataObj) {
-                    this.loading = false;
                     var keyArr = Object.keys(dataObj);
                     this.items = keyArr.map(key => {
                         return {...dataObj[key],
@@ -91,3 +105,10 @@
         }
     }
 </script>
+
+<style>
+    .page-item.active .page-link {
+        background-color: #eeeeee;
+        border-color: #dddddd;
+    }
+</style>

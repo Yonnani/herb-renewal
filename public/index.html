@@ -28,13 +28,14 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9a29ff2f6e4604e63a7aefc73e9fc5f7"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
     <script>
-        const config = {
-            apiKey: "AIzaSyBMNx91fPiaXNR3tRXWez5zyIrTbw-8BCE",
-            authDomain: "herbdongsan-noticeboard.firebaseapp.com",
-            databaseURL: "https://herbdongsan-noticeboard.firebaseio.com",
-            projectId: "herbdongsan-noticeboard",
-            storageBucket: "",
-            messagingSenderId: "920708035047"
+        // Initialize Firebase
+        var config = {
+            apiKey: `${process.env.VUE_APP_FIREBASE_API_KEY}`,
+            authDomain: `${process.env.VUE_APP_FIREBASE_AUTH_DOMAIN}`,
+            databaseURL: `${process.env.VUE_APP_FIREBASE_DATABASE_URL}`,
+            projectId: `${process.env.VUE_APP_FIREBASE_PROJECT_ID}`,
+            storageBucket: `${process.env.VUE_APP_FIREBASE_STORAGE_BUCKET}`,
+            messagingSenderId: `${process.env.VUE_APP_FIREBASE_MESSAGING_SENDERID}`
         };
         firebase.initializeApp(config);
         const database = firebase.database();

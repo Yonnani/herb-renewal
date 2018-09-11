@@ -21,7 +21,6 @@
         methods: {
             getMap() {
                 /* eslint-disable */
-                console.log('map start');
                 var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
                 var options = { //지도를 생성할 때 필요한 기본 옵션
                     center: new daum.maps.LatLng(35.271153, 129.092369), //지도의 중심좌표.
@@ -44,18 +43,7 @@
                 // 줌 컨트롤 추가
                 var control = new daum.maps.ZoomControl();
                 map.addControl(control, daum.maps.ControlPosition.TOPRIGHT);
-
-                console.log('map end');
             }
         }
-        // watch: {
-        //     doLoad(value) {
-        //         console.log('============== ', value);
-        //         if (value) {
-        //             this.getMap();
-        //             console.log('do load watch value ', value);
-        //         }
-        //     }
-        // }
     }
 </script>

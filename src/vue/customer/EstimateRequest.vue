@@ -181,7 +181,7 @@
                                     that.params,
                                     process.env.VUE_APP_EMAIL_USER_ID
                                 ).then(function(response) {
-                                    console.log('SUCCESS!', response.status, response.text);
+                                    // console.log('SUCCESS!', response.status, response.text);
                                     that.successModal = true;
                                     that.reset();
                                     that.loading = false;
