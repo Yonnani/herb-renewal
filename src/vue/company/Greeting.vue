@@ -15,7 +15,7 @@
                 </p>
             </b-col>
             <b-col cols="12" md="4">
-                <img src="./../../assets/img/20180725_152906-1.jpg" />
+                <img src="./../../assets/img/20180725_152906-1.jpg" style="max-height: 422px;" />
             </b-col>
         </b-row>
         <b-row class="px-3">
