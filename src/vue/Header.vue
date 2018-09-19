@@ -3,9 +3,9 @@
         <!--<div class="d-flex justify-content-between">-->
         <b-row>
             <b-col cols="12" sm="4">
-                <a href="#/">
+                <router-link to="/">
                     <img src="./../assets/logo.png" />
-                </a>
+                </router-link>
             </b-col>
             <b-col cols="12" sm="8" class="text-right">
                 <div class="d-flex flex-column">

@@ -17,7 +17,7 @@
                 </a>
             </b-col>
         </b-row>
-        <b-modal size="lg" v-model="imgDetailModal" header-close-label>
+        <b-modal size="lg" v-model="imgDetailModal" header-close-label body-class="max-height-545">
             <div slot="modal-header">
                 Portfolio
             </div>

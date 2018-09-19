@@ -7,9 +7,9 @@
             <b-col cols="12" md="6" class="px-5 px-md-4 mb-2">
                 <div class="d-flex mb-2">
                     <div class="mx-2">
-                        <a href="#/company/greeting">인사말</a> /
-                        <a href="#/company/directions">오시는길</a> /
-                        <a href="#/customer/estimate">견적기타문의</a> /
+                        <router-link to="/company/greeting">인사말</router-link> /
+                        <router-link to="/company/directions">오시는길</router-link> /
+                        <router-link to="/customer/estimate">견적기타문의</router-link> /
                         이메일주소무단수집금지
                     </div>
                 </div>

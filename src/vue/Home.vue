@@ -23,7 +23,7 @@
         <div>
             <div class="d-flex justify-content-between mt-4">
                 <h5 class="mb-0">포트폴리오</h5>
-                <a href="#/portfolio">더보기</a>
+                <router-link to="/portfolio">더보기</router-link>
             </div>
             <b-row class="d-flex justify-content-between my-3"><!-- style="height: 150px" -->
                 <b-col v-for="image in images" :key="image.index" cols="6" md="3" class="mb-1">
