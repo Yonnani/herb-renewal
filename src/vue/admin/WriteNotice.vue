@@ -69,6 +69,8 @@
                 registering: false
             }
         },
+        mounted() {
+        },
         methods: {
             confirm() {
                 if (!this.subject || !this.content) {
@@ -80,7 +82,7 @@
             },
             submit() {
                 this.registering = true;
-                const noticeRef = database.ref(`notice/${this.uid}`);
+                const noticeRef = this.$database.ref(`notice/${this.uid}`);
                 noticeRef.push({
                     content: this.content,
                     subject: this.subject,

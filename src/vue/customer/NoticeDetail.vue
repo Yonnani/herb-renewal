@@ -69,7 +69,7 @@
         methods: {
             deleteNotice(key) {
                 const refAddr = `notice/${process.env.VUE_APP_FIREBASE_UID}/${key}`;
-                const noticeRef = database.ref(refAddr);
+                const noticeRef = this.$database.ref(refAddr);
                 noticeRef.remove()
                     .then(result => {
                         if (!result) {

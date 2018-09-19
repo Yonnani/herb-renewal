@@ -77,7 +77,7 @@
             this.moment = require('moment');
 
             const refAddr = `notice/${process.env.VUE_APP_FIREBASE_UID}`;
-            const noticeRef = database.ref(refAddr);
+            const noticeRef = this.$database.ref(refAddr);
             noticeRef.once('value').then(snapshot => {
                 const dataObj = snapshot.val();
                 this.loading = false;
