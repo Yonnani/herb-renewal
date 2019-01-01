@@ -33,6 +33,23 @@
                 </b-col>
             </b-row>
         </div>
+
+        <b-modal size="lg" v-model="showPopup" :hide-header="true">
+            <!--<div slot="modal-header" class="w-100">-->
+            <!--</div>-->
+            <div class="text-center">
+                <img src="../assets/img/home_popup.png" style="max-width: 100%;">
+            </div>
+            <div slot="modal-footer" class="w-100">
+                <b-button size="sm" variant="secondary" class="float-right" @click="closePopup">닫기</b-button>
+                <b-form-checkbox class="float-right"
+                                 v-model="hideForWeek"
+                                 :value="true"
+                                 :unchecked-value="false">
+                    일주일간 보지 않기
+                </b-form-checkbox>
+            </div>
+        </b-modal>
     </div>
 </template>
 
@@ -41,9 +58,19 @@
     export default {
         name: 'Home',
         mounted() {
+            const hide = this.getCookie(this.cookieNameHidePopup);
+            if (hide === 'true') {
+                this.showPopup = false;
+            } else {
+                this.showPopup = true;
+            }
+            console.log({hide});
         },
         data () {
             return {
+                hideForWeek: false,
+                showPopup: false,
+                cookieNameHidePopup: 'hidePopup',
                 slide: 0,
                 sliding: null,
                 images: [
@@ -78,6 +105,24 @@
             },
             selectPic(index) {
                 this.slide = index - 1;
+            },
+            closePopup() {
+                this.showPopup = false;
+                if (this.hideForWeek) {
+                    this.setCookie(this.cookieNameHidePopup, 'true', 7);
+                }
+            },
+            setCookie(cookieName, value, exp) {
+                var date = new Date();
+                date.setTime(date.getTime() + exp*24*60*60*1000);
+                document.cookie = cookieName + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+            },
+            getCookie(name) {
+                var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+                return value? value[2] : null;
+            },
+            deleteCookie(name) {
+                document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             }
         }
     }
